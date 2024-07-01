@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CustomerResource extends JsonResource
+class OrderResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,10 +17,14 @@ class CustomerResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'namaCustomer' => $this->namaCustomer,
             'email' => $this->email,
             'alamat' => $this->alamat,
             'noHP' => $this->noHP,
+            'jenisLayanan' => $this->jenisLayanan,
+            'harga' => $this->harga,
+            'promo' => $this->promo,
+            'tanggalPesanan' => (new Carbon($this->tanggalPesanan))->format('Y-m-d'),
         ];
     }
 }
