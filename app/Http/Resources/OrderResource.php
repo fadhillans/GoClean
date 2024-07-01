@@ -18,9 +18,9 @@ class OrderResource extends JsonResource
         return [
             'id' => $this->id,
             'namaCustomer' => $this->namaCustomer,
-            'email' => $this->email,
-            'alamat' => $this->alamat,
-            'noHP' => $this->noHP,
+            'email' => new CustomerResource($this->email),
+            'alamat' => new CustomerResource($this->alamat),
+            'noHP' => new CustomerResource($this->noHP),
             'jenisLayanan' => $this->jenisLayanan,
             'harga' => $this->harga,
             'promo' => $this->promo,
